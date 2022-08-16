@@ -5,5 +5,5 @@ module.exports = {
         title: 'Client Portal API Documentation',
       },
     },
-    publicPath: '/cp-web-api-docs/'
+    publicPath: '/cpwebapi/'
   }

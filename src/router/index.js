@@ -52,7 +52,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/cp-web-api-docs'),
+  history: createWebHistory('/cpwebapi'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }
