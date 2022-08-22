@@ -57,11 +57,11 @@ import Warning from "@/components/Warning.vue";
       <h3>How can I prevent the session from timing out?</h3>
       <p>
         A Client Portal API brokerage session will timeout if no requests are received within a period of 5 minutes. In order to prevent the session from timing out, the 
-        endpoint <b>/portal/sso/validate</b> should be called on a regular basis. It is recommended to call this endpoint approximately every
+        endpoint <b>/tickle</b> should be called on a regular basis. It is recommended to call this endpoint approximately every
         minute. 
       </p>
       <p>
-        If the brokerage session has timed out but the session is still connected to the IBKR backend, the response to <b>/iserver/auth/status</b> returns 'connected':true and 'authenticated':false.
+        If the brokerage session has timed out but the session is still connected to the IBKR backend, the response to <b>/auth/status</b> returns 'connected':true and 'authenticated':false.
         Calling the <b>/reauthenticate</b> endpoint will start a new brokerage session.
       </p>
     </article>

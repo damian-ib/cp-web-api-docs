@@ -24,9 +24,9 @@ export default {
           title: 'How does Client Portal API differ from TWS API?',
           content: `
           <p>
-            Client Portal API is a HTTP based API, that is, requests to the IBKR backend are sent over the internet. 
+            Client Portal API is a REST based API, that is, requests to the IBKR backend are sent over the internet. 
             In comparison, TWS API is designed to programatically interact with the Trader Workstation software. 
-            In order to use Client Portal API, a lightweight API gateway, or in the case of institutional clients OAuth, is required whereas for TWS API, a working installation of TWS is required.          
+            In order to use Client Portal API, a lightweight API gateway, or in the case of institutional clients, OAuth or a dedicated connection, is required, whereas for TWS API, a working installation of TWS is required.          
           </p>
           `
         },
@@ -34,7 +34,12 @@ export default {
           title: 'Are there any additional fees for using Client Portal API?',
           content: `
           <p>
-            There are no additional fees associated with the use of Client Portal API. In addition, there are no minimum funding requirements for accounts. However, please note that funding may be required where clients wish to receive realtime market data. For more information on market data fees and choosing the correct market data subscription, please see the workflows page of this guide.
+            There are no additional fees associated with the use of Client Portal API. In addition, there are no minimum funding requirements for accounts. 
+            Funding may be required where clients wish to receive real time market data. 
+            For more information on market data fees and choosing the correct market data subscription, please see the <a href="./workflows">Workflows</a> page of this guide.
+          </p>
+          <p>
+            <b>Note: </b> Minimum commision requirements apply in the case of clients wishing to connect to Client Portal API via a dedicated connection.
           </p>
           `
         },
@@ -42,7 +47,7 @@ export default {
           title: 'What are the account requirements?',
           content: `
           <p>
-            All Interactive Brokers' accounts are eligible to use Client Portal API.
+            All fully opened Interactive Brokers' accounts are eligible to use Client Portal API.
           </p>
           `
         },
@@ -50,7 +55,7 @@ export default {
           title: 'Can I use the Client Portal API with a paper account?',
           content: `
           <p>
-            Yes, both paper and live accounts can be used with Client Portal API. We recommend using the paper account for initial testing and development, and only switching to live once you are happy with the results.
+            Client Portal API supports both paper and live accounts. We recommend using the paper account for initial testing and development, and only switching to live once you are happy with the results.
           </p>  
           `
         },  

@@ -17,7 +17,7 @@ const websocketsIndividual = [
                 </p>
                 <h5>From your client application</h5>
                 <p>    
-                Request the session ID from the /tickle endpoint and send it to the websocket endpoint in the following
+                Request the session ID from the <b>/tickle</b> endpoint and send it to the websocket endpoint in the following
                     format:
                     <div class="code">
                     <samp>
@@ -87,16 +87,16 @@ const websocketsIndividual = [
                     Streaming, top-of-the-book market data is available for all instruments using Client Portal API's websocket endpoint. For streaming data the following message needs to be sent to the endpoint:
                     <div class="code">
                         <code>
-                        smd+conID+{arguments}
+                        smd+conId+{arguments}
                         </code>
                     </div>
                 </p>
                 <p>
-                The conID is the instrument's unique contract identifier within Interactive Brokers' database. 
+                The conId is the instrument's unique contract identifier within Interactive Brokers' database. 
                 </p>
                 <p>
                     Contracts requested via this topic use SMART routing by default. If you wish to specify the exchange explicitly, 
-                    the passed contract identifier should be modified into the format <b>conID@EXCHANGE</b>, where EXCHANGE is the exchange on which the contract trades.
+                    the passed contract identifier should be modified into the format <b>conId@EXCHANGE</b>, where EXCHANGE is the exchange on which the contract trades.
                 </p>
                 <p>
                     <b>Tip:</b> The contract ID for a particular instrument can be found using the endpoint <b>/iserver/secdef/search</b>.
@@ -105,7 +105,7 @@ const websocketsIndividual = [
                     In order to unsubscribe from market data for the specified contract ID, the following message needs to be sent to the endpoint:
                     <div class="code">
                         <code>
-                        umd+conID+{}
+                        umd+conId+{}
                         </code>
                     </div>
                 </p>
@@ -127,7 +127,7 @@ const websocketsIndividual = [
                 title: 'Historical Data',
                 content: `
                 <p>
-                    For streaming historical data, the topic <b>smh+conID</b> is used. There are also optional parameters available in JSON format. 
+                    For streaming historical data, the topic <b>smh+Id</b> is used. There are also optional parameters available in JSON format. 
                     If no parameters are specified, the empty parameters array <b>{}</b> can be passed. 
                     Incorrectly specified parameters are ignored and the default (empty) response is returned. 
                     To unsubscribe, the topic is <b>umh+serverId</b> can be used, where <b>serverID</b> is the server ID associated with the request.
@@ -425,8 +425,8 @@ const websocketsIndividual = [
                 `
             },
             {
-                id: 'weekly-trades',
-                title: 'Weekly Trades Details',
+                id: 'trades',
+                title: 'Trades Details',
                 content: `
                 <p>
                     To review a list of your trades for the current and previous six days, the topic <b>str</b> can be sent to the websocket endpoint.
