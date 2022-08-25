@@ -29,8 +29,8 @@ export default {
 <template>
     <div class="latest-update-card">
         <div class="header">
-            <span>{{ title }}</span>
-            <span>{{ formatUpdateDate }}</span>
+            <span id="change-title">{{ title }}</span>
+            <span id="change-date">{{ formatUpdateDate }}</span>
         </div>
         <div class="content">
             <p>{{ description }}</p>
@@ -45,6 +45,14 @@ export default {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+#change-date {
+    width: fit-content;
+}
+
+#change-title {
+    flex: 1;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -52,7 +60,7 @@ export default {
     align-items: center;
     background-color: #DB1222;
     color: white;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 1rem 0.75rem;
 }
 

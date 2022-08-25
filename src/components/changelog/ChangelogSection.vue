@@ -56,6 +56,7 @@ export default {
     flex-direction: row;
     align-items: center;
     overflow: hidden;
+    gap: 0.5rem;
 }
 .header .changelog-tags > * {
     cursor: default;
