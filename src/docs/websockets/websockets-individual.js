@@ -268,6 +268,64 @@ const websocketsIndividual = [
                 <pre class='language-json'><code>umh+{serverId}</code></pre>
             </div>
                 `,
+            },
+            {
+                id: 'market-depth',
+                title: 'Market Depth Data',
+                content: `
+                <p>
+                    To subscribe to deep book, market depth data, the topic <b>sbd</b> can be sent along with the requesting account id, the contract id and, optionally, the exchange source for market depth data (a valid market data subscription is required). 
+                    If no exchange is specified, all available deep exchanges are assumed.
+                    An example of a market depth subscription message is:
+                </p>
+                <div v-highlight class='code-box'>
+                    <pre class='language-json'><code>sbd+{acctId}+{conId}+{exchange}</code></pre>
+                </div>
+                <p>
+                    In order to unsubscribe from market dapth, the topic <b>ubd</b> can be sent along with the account id. An example of an unsubscribe message is:
+                </p>
+                <div v-highlight class='code-box'>
+                    <pre class='language-json'><code>ubd+{acctId}</code></pre>
+                </div>
+                <h5>Example: Requesting market depth from ARCA</h5>
+                <p>
+                    The following request will return market depth data from the ARCA exchange for account id DU12345 and contract id 265598:
+                </p>
+                <div v-highlight class='code-box'>
+                    <pre class='language-json'><code>sbd+DU12345+265598+ARCA</code></pre>
+                </div>
+                <p>
+                    The response will continously return market depth data for the specified contract until the subscription is cancelled. An example of a market depth response is:
+                </p>
+                <div v-highlight class='code-box'>
+                    <pre class='language-json'><code>{
+    'topic': 'sbd',
+    'data': [
+        {
+            'row': 0,
+            'focus': 1,
+            'price': 123.45
+        },
+        {
+            'row': 1,
+            'focus': 0,
+            'price': 123.44,
+            'ask': 200
+        },
+        {
+            'row': 2,
+            'focus': 0,
+            'price': 120.00,
+            'bid': 400
+        }
+    ],
+}</code></pre>
+                </div>
+                <p>
+                    Where, <b>row</b> is the row number of the market depth data, <b>focus</b> indicates the last price for the contract, <b>price</b> is the price for the current row, and <b>ask</b> and <b>bid</b> are the ask and bid sizes, respectively.
+                </p>
+                    `
+
             }
         ]
     },
