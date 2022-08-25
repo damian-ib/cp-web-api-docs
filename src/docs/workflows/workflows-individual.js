@@ -106,15 +106,164 @@ const workflowsIndividual = [
                 `
             },
             {
-                id: 'too-many-requests',
-                title: 'Too Many Requests Error',
+                id: 'pacing-limits',
+                title: 'Pacnig Limitations',
                 content: `
                 <p>
-                    Interactive Brokers has implemented rate limiting on endpoints accessible via Client Portal API. Currently a limit of 60 requests per minute exists.
+                    Interactive Brokers has implemented pacing limits on endpoints accessible via Client Portal API. Currently a limit of 10 requests per second exists.
+                    In addition some endpoint specific limits are also in place. These limits can be found in the table below.
+                </p>
+                <p>
                     Where this limit is exceeded, the API will return a "429 Too Many Requests" exception. Violator IP addresses are put in a penalty box for 10 minutes.
                     After this period, the IP address is removed from the penalty box until another request exceeds the limit again. 
-                    Repeat violator IP addresses can be permamently blocked until the issue is resolved.
+                    Repeat violator IP addresses can be permamently blocked until the issue is resolved. 
                 </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Method</th>
+                            <th>Limit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/iserver/marketdata/snapshot</td>
+                            <td>GET</td>
+                            <td>10 req/s</td>
+                        </tr>
+                        <tr>
+                            <td>/iserver/marketdata/history</td>
+                            <td>GET</td>
+                            <td>5 concurrent requests</td>
+                        </tr>
+                        <tr>
+                            <td>/iserver/scanner/params</td>
+                            <td>GET</td>
+                            <td>1 req/15 mins</td>
+                        </tr>
+                        <tr>
+                            <td>/iserver/scanner/run</td>
+                            <td>POST</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/iserver/trades</td>
+                            <td>GET</td>
+                            <td>1 req/5 secs</td>
+                        </tr>
+                        <tr>
+                            <td>iserver/orders</td>
+                            <td>GET</td>
+                            <td>1 req/5 secs</td>
+                        </tr>
+                        <tr>
+                            <td>/iserver/account/pnl/partitioned</td>
+                            <td>GET</td>
+                            <td>1 req/5 secs</td>
+                        </tr>
+                        <tr>
+                            <td>/portfolio/accounts</td>
+                            <td>GET</td>
+                            <td>1 req/5 secs</td>
+                        </tr>
+                        <tr>
+                            <td>/portfolio/subaccounts</td>
+                            <td>GET</td>
+                            <td>1 req/5 secs</td>
+                        </tr>
+                        <tr>
+                            <td>/pa/performance</td>
+                            <td>POST</td>
+                            <td>1 req/15 mins</td>
+                        </tr>
+                        <tr>
+                            <td>/pa/summary</td>
+                            <td>POST</td>
+                            <td>1 req/15 mins</td>
+                        </tr>
+                        <tr>
+                            <td>/pa/transactions</td>
+                            <td>POST</td>
+                            <td>1 req/15 mins</td>
+                        </tr>
+                        <tr>
+                            <td>/trsv/secdef</td>
+                            <td>POST</td>
+                            <td>200 conids/request</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/unreadnumber</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/settings</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/settings/{typecode}</td>
+                            <td>POST</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/disclaimer/{typecode}</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/disclaimer/{typecode}</td>
+                            <td>PUT</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/deliveryoptions</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/deliveryoptions/email</td>
+                            <td>PUT</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/deliveryoptions/device</td>
+                            <td>POST</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/deliveryoptions/{deviceId}</td>
+                            <td>DELETE</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/notifications</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/notifications/more</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/fyi/notifications/{notificationId}</td>
+                            <td>PUT</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/tickle</td>
+                            <td>GET</td>
+                            <td>1 req/sec</td>
+                        </tr>
+                        <tr>
+                            <td>/sso/validate</td>
+                            <td>GET</td>
+                            <td>1 req/min</td>
+                        </tr>
+                    </tbody>
+                </table>
                 `
             },
             {

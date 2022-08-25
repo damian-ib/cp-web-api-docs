@@ -7,6 +7,7 @@ const changelog = [
             'New market depth topic added to websockets documentation',
             'Improved formatting of code examples',
             'Added information about trailiing type orders to the orders endpoint',
+            'Added endpoint specific pacing limitations',
         ],
         tags: [
             'documentation',
