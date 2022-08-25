@@ -5314,7 +5314,7 @@
                     "type": "string"
                 },
                 "orderType": {
-                    "description": "The order-type determines what type of order you want to send.\nLMT - A limit order is an order to buy or sell at the specified price or better.\nMKT - A market order is an order to buy or sell at the markets current NBBO.\nSTP - A stop order becomes a market order once the specified stop price is attained or penetrated.\nSTOP_LIMIT - A stop limit order becomes a limit order once the specified stop price is attained or penetrated.\nMIDPRICE - A MidPrice order attempts to fill at the current midpoint of the NBBO or better.\n",
+                    "description": "The order-type determines what type of order you want to send.\nLMT - A limit order is an order to buy or sell at the specified price or better.\nMKT - A market order is an order to buy or sell at the markets current NBBO.\nSTP - A stop order becomes a market order once the specified stop price is attained or penetrated.\nSTOP_LIMIT - A stop limit order becomes a limit order once the specified stop price is attained or penetrated.\nMIDPRICE - A MidPrice order attempts to fill at the current midpoint of the NBBO or better.\nFor trailing orders set orderType to either TRAIL or TRAILLMT\n",
                     "type": "string"
                 },
                 "listingExchange": {
@@ -5380,6 +5380,14 @@
                 "strategyParameters": {
                     "description": "The IB Algo parameters for the specified algorithm.\n",
                     "type": "object"
+                },
+                "trailingType": {
+                    "description": "This is the trailing type for trailing amount. We only support two types here: amt or %.\n",
+                    "type": "string"
+                },
+                "trailingAmt": {
+                    "description": "Optional if order is TRAIL or TRAILLMT. When trailingType = amt, this is the trailing amount. When trailingType = %, this means percentage.\n",
+                    "type": "number"
                 }
             }
         },

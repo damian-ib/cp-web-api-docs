@@ -51,8 +51,16 @@ article table td {
     padding: 1rem;
 }
 
-code[class*="language-"], pre[class*="language-"] {
+.code-box code[class*="language-"],
+.code-box pre[class*="language-"] {
     font-size: small;
     color: #333;
     word-wrap: normal;
+}
+
+.swagger-ui .highlight-code>.microlight code {
+    white-space: pre-wrap!important;
+    word-break: break-all;
+    text-shadow: none;
+    color: white;
 }
