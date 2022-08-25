@@ -76,9 +76,6 @@ export default {
   <base-layout>
     <template #content>
       <h2>Client Portal API Reference & Documentation</h2>
-      <p>
-        
-      </p>
       <ul id="features-list">
         <li>Many of the features that make your trading successful are available through Client Portal API</li>
         <li>Client Portal API offers Interactive Brokers' clients the ability to trade, monitor and manage their account</li>

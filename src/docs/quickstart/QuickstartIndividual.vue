@@ -32,14 +32,14 @@
       <p>
         As the Client Portal API Gateway was built using Java, a working installation of the Java Runtime Environment (JRE) is required. The minimum requirement is Java 8 update 192.
         In order to check if you have a working installation of Java, open a terminal and run the following command:
-        <div class="code">
-          <code>java --version</code>
+        <div v-highlight class="code-box">
+          <pre class="language-json"><code>java --version</code></pre>
         </div>
       </p>
       <p>
         If Java is installed and correctly configured you should see information about the currently installed version, otherwise an error is raised. An example response is the following:
-        <div class="code">
-          <code>java 17.0.1 2021-10-19 LTS</code>
+        <div v-highlight class="code-box">
+          <pre class="language-json"><code>java 17.0.1 2021-10-19 LTS</code></pre>
         </div>
         <p>
           If you don't currently have Java installed you can download it by clicking on the Java card in the Downloads section of this page.
@@ -52,20 +52,20 @@
       <p>
         Using the terminal, navigate to the directory where the gateway has been unzipped. For example:
       </p>
-      <div class="code">
-        <code>cd C:/Users/Example/Desktop/Cp Gateway</code>
+      <div v-highlight class="code-box">
+        <pre class="language-json"><code>cd C:/Users/Example/Desktop/Cp Gateway</code></pre>
       </div>
       <p>
         On Windows, launch the gateway using the following command:
       </p>
-      <div class="code">
-        <code>bin\run.bat root\conf.yaml</code>
+      <div v-highlight class="code-box">
+        <pre class="language-json"><code>bin\run.bat root\conf.yaml</code></pre>
       </div>
       <p>
         And in the case of Unix systems:
       </p>
-      <div class="code">
-        <code>bin/run.sh root/conf.yaml</code>
+      <div v-highlight class="code-box">
+        <pre class="language-json"><code>bin/run.sh root/conf.yaml</code></pre>
       </div>
     </section>
     <hr>

@@ -31,10 +31,8 @@ import Warning from "@/components/Warning.vue";
         The endpoint <b>/iserver/auth/status</b> can be used to determine the current authentication status of the session. 
         Once you have logged in using the Client Portal API Gateway, you can make a POST request to this endpoint to determine if your session is fully authenticated.
         If the session is fully authenticated, the response from this endpoint will contain the following JSON object:
-        <div class="code">
-            <samp>
-              {'authenticated': true, 'connected': true, 'competing': false}
-            </samp>
+        <div class="code-box">
+            <pre class="language-json"><code>{'authenticated': true, 'connected': true, 'competing': false}</code></pre>
         </div>
       </p>
     </article>

@@ -39,7 +39,7 @@ export default {
 .content {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    width: 100%;
 }
 
 .content#reversed {
@@ -47,8 +47,8 @@ export default {
 }
 
 main {
-    flex: 1;
     padding-inline: 1.5rem;
+    
 }
 
 aside {
@@ -61,12 +61,19 @@ aside {
         align-items: flex-start;
     }
 
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
     .content#reversed main {
         padding-top: 0;
     }
 
     main {
         padding-top: 3rem;
+        flex: 1;
     }
 }
 

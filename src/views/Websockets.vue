@@ -21,26 +21,10 @@ export default {
       activeSectionID: null
     }
   },
-  // When the component is mounted called the parseJsonStrings method
-  mounted() {
-    this.parseJsonStrings();
-  },
   methods: {
     onScroll(articleID) {
       this.activeSectionID = articleID;
-    },
-    parseJsonStrings() {
-      // Parse code elements, if the element contains JSON, parse it and display it as a formatted JSON object
-      const codeElements = document.querySelectorAll('code');
-      codeElements.forEach(element => {
-        try {
-          const json = JSON.parse(element.textContent);
-          element.textContent = JSON.stringify(json, null, 2);
-        } catch (e) {
-          // Do nothing
-        }
-      });
-  }
+    }
   },
   computed: {
     sections() {
@@ -146,6 +130,9 @@ export default {
 @media (min-width: 700px) {
   #active {
     display: block;
+  }
+  .playground-container-mobile {
+    display: none;
   }
 }
 </style>

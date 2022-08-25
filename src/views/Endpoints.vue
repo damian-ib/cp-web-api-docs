@@ -81,7 +81,7 @@ export default {
   .downloads {
     margin-inline: 0;
     margin-right: 1.5rem;
-    margin-top: 3rem;
+    padding-top: 3rem;
   }
 }
 </style>

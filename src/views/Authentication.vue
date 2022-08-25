@@ -46,8 +46,6 @@ export default {
     </template>
     <template #aside>
       <div class="downloads">
-        <!-- <h2>Resources</h2> -->
-        <!-- TODO https://ibkr.info/article/2260   -->
       </div>
     </template>
   </base-layout>
