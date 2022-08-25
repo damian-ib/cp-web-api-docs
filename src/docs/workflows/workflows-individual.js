@@ -107,7 +107,7 @@ const workflowsIndividual = [
             },
             {
                 id: 'pacing-limits',
-                title: 'Pacnig Limitations',
+                title: 'Pacing Limitations',
                 content: `
                 <p>
                     Interactive Brokers has implemented pacing limits on endpoints accessible via Client Portal API. Currently a limit of 10 requests per second exists.
